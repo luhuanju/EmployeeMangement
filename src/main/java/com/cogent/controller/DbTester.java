@@ -9,30 +9,13 @@ public class DbTester {
 	public static void main(String[] args) throws SQLException {
 		DbLogic dbLogic = new DbLogic();
 
-		System.out.println("Before insert");
-		dbLogic.query();
+		dbLogic.insert(101, "Pantry Butter", (float) 78.0, true);
+		dbLogic.insert(102, "Toilet Paper", (float) 66.0, true);
+		dbLogic.insert(103, "Batteries", (float) 34.0, true);
+		dbLogic.insert(104, "Pet Food", (float) 67.0, true);
+		dbLogic.insert(105, "Canned Goods", (float) 55.0, true);
+		dbLogic.insert(106, "Coffee Cups", (float) 90.0, true);
 
-		// add
-		dbLogic.insert(123, "Tias");
-
-		System.out.println("After insert");
-		// query
-		dbLogic.query();
-
-
-		// query
-		// update
-		dbLogic.update(123, "Jack");
-
-		System.out.println("After Update");
-		// query again
-		dbLogic.query();
-
-
-		// delete
-		dbLogic.delete(123);
-		System.out.println("After Delete");
-		// query again
 		dbLogic.query();
 
 	}

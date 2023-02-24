@@ -27,10 +27,10 @@ public class ConnectDb {
 		try {
 			conn = DriverManager.getConnection(DB_URL, USER, PASS);
 			stmt = conn.createStatement();
-			ResultSet rs = conn.getMetaData().getTables(null, null, "Employee", null);
+			ResultSet rs = conn.getMetaData().getTables(null, null, "Product", null);
 			if (!rs.next()) {
 				// create the table if it does not exist
-				String sql = "CREATE TABLE Employee (employeeID int, employeeName VARCHAR(50))";
+				String sql = "CREATE TABLE Product (id int, name VARCHAR(50), cost FLOAT, available BOOLEAN)";
 				stmt.executeUpdate(sql);
 				System.out.println("Table created successfully.");
 			} else {
